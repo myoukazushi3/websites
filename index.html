@@ -1,11 +1,987 @@
 <!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>LP test</title>
-  </head>
-  <body>
-    <h1>AIテレアポパートナーズ</h1>
-    <p>LP表示テスト</p>
-  </body>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AIテレアポパートナーズ｜即戦力テレアポ/IS人材を最短即日でアサイン</title>
+  <meta name="description" content="採用・育成が難しいテレアポ/インサイドセールス業務を、即戦力人材で安定運用。最短即日で稼働開始。資料DL・ご相談はこちら。" />
+  <meta name="theme-color" content="#0b2a52" />
+
+  <meta property="og:title" content="AIテレアポパートナーズ｜即戦力テレアポ/IS人材を最短即日でアサイン" />
+  <meta property="og:description" content="採用・育成が難しいテレアポ/IS業務を、即戦力人材で安定運用。最短即日で稼働開始。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* brand palette */
+      --navy:#0b2a52;
+      --blue:#1e5aa8;
+      --orange:#d97706;
+      --bg:#f6f7fb;
+      --paper:#ffffff;
+      --text:#0b1220;
+      --muted:#52607a;
+      --line:#e7ebf3;
+
+      /* layout tokens */
+      --container: 1120px;
+      --radius: 16px;
+      --radius-hero: 24px;
+      --shadow: 0 10px 28px rgba(11,42,82,.10);
+      --shadow-soft: 0 8px 18px rgba(11,42,82,.08);
+      --space: 26px;
+
+      /* header height (for anchor offset) */
+      --header-h: 64px;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(1100px 420px at 10% -80px, rgba(30,90,168,.14), transparent 60%),
+        radial-gradient(900px 360px at 98% 120px, rgba(217,119,6,.12), transparent 60%),
+        linear-gradient(180deg, #fbfcff 0%, var(--bg) 30%, var(--bg) 100%);
+      padding-bottom: 82px; /* bottom bar */
+    }
+
+    a{ color:inherit; text-decoration:none; }
+    img{ max-width:100%; height:auto; }
+    .container{ width:min(var(--container), calc(100% - 32px)); margin-inline:auto; }
+    .muted{ color: var(--muted); }
+    .sr-only{
+      position:absolute;
+      width:1px; height:1px;
+      padding:0; margin:-1px;
+      overflow:hidden; clip: rect(0,0,0,0);
+      border:0;
+    }
+
+    /* Shared */
+    section{ padding: var(--space) 0; scroll-margin-top: calc(var(--header-h) + 16px); }
+    .card{
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .card__inner{ padding: 18px; }
+    .grid-2{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .grid-3{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    .sectionHead{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin-bottom: 14px;
+    }
+    .sectionTitle{
+      margin:0;
+      font-size: 20px;
+      letter-spacing:.02em;
+      color: var(--navy);
+    }
+    .sectionNote{
+      margin:0;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      gap:8px;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor:pointer;
+      user-select:none;
+      line-height:1;
+      transition: transform .12s ease, box-shadow .12s ease, background .12s ease, border-color .12s ease, filter .12s ease;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .btn:active{ transform: translateY(1px); }
+    .btn--primary{
+      background: linear-gradient(180deg, rgba(30,90,168,1), rgba(20,66,125,1));
+      color:#fff;
+      border-color: rgba(255,255,255,.10);
+      box-shadow: var(--shadow-soft);
+    }
+    .btn--primary:hover{ transform: translateY(-1px); box-shadow: 0 12px 26px rgba(11,42,82,.16); }
+    .btn--secondary{
+      background:#fff;
+      color: var(--navy);
+      border-color: var(--line);
+      box-shadow: 0 8px 18px rgba(11,42,82,.06);
+    }
+    .btn--secondary:hover{ transform: translateY(-1px); border-color: rgba(30,90,168,.25); }
+    .btn--ghost{
+      background: transparent;
+      color: var(--navy);
+      border-color: rgba(11,42,82,.20);
+    }
+    .btn--ghost:hover{ transform: translateY(-1px); background: rgba(11,42,82,.04); }
+    .btn--danger{
+      background: linear-gradient(180deg, #ef4444, #dc2626);
+      color:#fff;
+      border-color: rgba(255,255,255,.14);
+      box-shadow: 0 10px 22px rgba(220,38,38,.20);
+      border-radius: 999px;
+      padding: 12px 16px;
+      letter-spacing:.04em;
+    }
+    .btn--danger:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+
+    :focus-visible{
+      outline: 3px solid rgba(217,119,6,.55);
+      outline-offset: 2px;
+      border-radius: 10px;
+    }
+
+    /* Header */
+    .header{
+      position: sticky;
+      top:0;
+      z-index: 50;
+      background: rgba(11,42,82,.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.10);
+    }
+    .header__row{
+      height: var(--header-h);
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 14px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      min-width: 240px;
+    }
+    .logo{
+      width: 36px; height: 36px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.22);
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.92), rgba(255,255,255,0) 55%),
+        linear-gradient(135deg, rgba(217,119,6,.95), rgba(30,90,168,.95));
+      box-shadow: 0 10px 22px rgba(0,0,0,.18);
+      position:relative;
+      flex: 0 0 auto;
+    }
+    .logo:after{
+      content:"AI";
+      position:absolute; inset:0;
+      display:grid; place-items:center;
+      color:#fff;
+      font-weight:900;
+      letter-spacing:.08em;
+      font-size: 13px;
+      text-shadow: 0 2px 0 rgba(0,0,0,.12);
+    }
+    .brand__name{
+      color:#fff;
+      font-weight: 800;
+      letter-spacing:.02em;
+      line-height: 1.05;
+    }
+    .brand__sub{
+      display:block;
+      margin-top: 2px;
+      font-size: 12px;
+      font-weight: 700;
+      color: rgba(255,255,255,.72);
+      letter-spacing:.06em;
+    }
+
+    nav[aria-label]{
+      flex: 1 1 auto;
+      display:flex;
+      justify-content:center;
+      gap: 8px;
+      flex-wrap:wrap;
+      padding: 0 6px;
+    }
+    .navlink{
+      color: rgba(255,255,255,.86);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.06);
+      transition: transform .12s ease, background .12s ease, border-color .12s ease;
+      white-space: nowrap;
+    }
+    .navlink:hover{
+      transform: translateY(-1px);
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.18);
+    }
+    .header__right{
+      min-width: 180px;
+      display:flex;
+      justify-content:flex-end;
+      gap: 10px;
+    }
+    .miniCta{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      font-weight: 900;
+      font-size: 13px;
+      letter-spacing:.02em;
+      transition: transform .12s ease, background .12s ease;
+    }
+    .miniCta:hover{ transform: translateY(-1px); background: rgba(255,255,255,.12); }
+
+    /* Hero */
+    .hero{ padding-top: 18px; }
+    .heroCard{
+      border-radius: var(--radius-hero);
+      overflow:hidden;
+      border: 1px solid rgba(11,42,82,.10);
+      background:
+        radial-gradient(900px 360px at 20% 10%, rgba(30,90,168,.16), transparent 55%),
+        radial-gradient(900px 360px at 95% 40%, rgba(217,119,6,.12), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.92), rgba(255,255,255,.88));
+      box-shadow: 0 16px 44px rgba(11,42,82,.14);
+    }
+    .heroGrid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 16px;
+      padding: 18px;
+    }
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-weight: 900;
+      letter-spacing:.08em;
+      font-size: 12px;
+      color: rgba(11,42,82,.92);
+      background: rgba(217,119,6,.12);
+      border: 1px dashed rgba(217,119,6,.35);
+      padding: 7px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    .kicker .dot{
+      width: 9px; height: 9px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(217,119,6,.16);
+    }
+    .hero h1{
+      margin:0 0 10px 0;
+      font-size: 44px;
+      line-height: 1.12;
+      letter-spacing: .01em;
+      color: var(--navy);
+    }
+    .accent{ color: var(--orange); text-shadow: 0 2px 0 rgba(217,119,6,.10); }
+    .heroLead{
+      margin: 0 0 14px 0;
+      color: rgba(11,18,32,.86);
+      font-size: 15px;
+      line-height: 1.9;
+      font-weight: 600;
+    }
+    .ctaRow{ display:flex; flex-wrap:wrap; gap:10px; margin: 12px 0 14px 0; }
+    .metrics{ display:flex; flex-wrap:wrap; gap:8px; margin-top: 6px; }
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      border-radius: 999px;
+      padding: 8px 10px;
+      background: rgba(11,42,82,.05);
+      border: 1px solid rgba(11,42,82,.12);
+      color: rgba(11,42,82,.92);
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .pill b{ color: var(--orange); font-weight: 900; letter-spacing:.02em; }
+    .heroSubnote{
+      margin: 12px 0 0 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    .visual{
+      border-radius: 18px;
+      border: 1px solid rgba(11,42,82,.12);
+      background:
+        linear-gradient(135deg, rgba(11,42,82,.96), rgba(30,90,168,.92)),
+        radial-gradient(220px 160px at 20% 18%, rgba(217,119,6,.85), rgba(217,119,6,0) 65%),
+        radial-gradient(220px 160px at 92% 72%, rgba(255,255,255,.22), rgba(255,255,255,0) 58%);
+      box-shadow: 0 14px 34px rgba(11,42,82,.18);
+      color:#fff;
+      padding: 16px;
+      position:relative;
+      overflow:hidden;
+      min-height: 300px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .visual:before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        repeating-linear-gradient(90deg, rgba(255,255,255,.08) 0 10px, rgba(255,255,255,0) 10px 18px),
+        radial-gradient(520px 280px at 10% 0%, rgba(217,119,6,.25), transparent 55%),
+        radial-gradient(420px 220px at 90% 100%, rgba(255,255,255,.10), transparent 60%);
+      opacity:.85;
+      mix-blend-mode: overlay;
+      pointer-events:none;
+    }
+    .visual .stamp{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 900;
+      letter-spacing:.08em;
+      font-size: 12px;
+      color: rgba(255,255,255,.92);
+      border: 1px dashed rgba(255,255,255,.28);
+      background: rgba(255,255,255,.08);
+      padding: 7px 10px;
+      border-radius: 999px;
+      width: fit-content;
+    }
+    .visual .stamp i{
+      width: 9px; height: 9px; border-radius:999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(217,119,6,.18);
+      display:inline-block;
+    }
+    .visual p{
+      position:relative;
+      margin: 12px 0 0 0;
+      color: rgba(255,255,255,.90);
+      font-weight: 700;
+      line-height: 1.8;
+      font-size: 13px;
+    }
+    .visual .mini{
+      position:relative;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,.16);
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      color: rgba(255,255,255,.88);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .chip{
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.18);
+      background: rgba(255,255,255,.08);
+      padding: 10px;
+    }
+    .chip b{ color:#fff; font-weight: 900; }
+    .chip .hot{ color:#ffd7a1; font-weight: 900; }
+
+    /* Strength / items */
+    .iconTitle{
+      display:flex; align-items:center; gap:10px;
+      margin: 0 0 8px 0;
+      font-size: 15px;
+      color: var(--navy);
+      letter-spacing:.02em;
+    }
+    .ico{
+      width:34px; height:34px;
+      border-radius: 12px;
+      border: 1px solid rgba(11,42,82,.12);
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 55%),
+        linear-gradient(135deg, rgba(217,119,6,.18), rgba(30,90,168,.12));
+      display:grid; place-items:center;
+      color: var(--navy);
+      font-weight: 900;
+    }
+    .desc{
+      margin:0;
+      color: rgba(11,18,32,.84);
+      font-weight: 600;
+      line-height: 1.85;
+      font-size: 13px;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      margin-top: 10px;
+      font-size: 12px;
+      color: rgba(11,42,82,.90);
+      background: rgba(30,90,168,.08);
+      border: 1px solid rgba(30,90,168,.18);
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      letter-spacing:.05em;
+    }
+    .tag b{ color: var(--orange); font-weight: 900; }
+
+    /* Cases */
+    .caseNo{
+      font-weight: 900;
+      letter-spacing:.08em;
+      font-size: 12px;
+      color: rgba(11,42,82,.92);
+      background: rgba(11,42,82,.06);
+      border: 1px solid rgba(11,42,82,.12);
+      border-radius: 999px;
+      padding: 6px 10px;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-bottom: 10px;
+    }
+    .caseNo i{
+      width: 8px; height: 8px; border-radius:999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 4px rgba(217,119,6,.14);
+      display:inline-block;
+    }
+    .caseTitle{
+      margin:0 0 8px 0;
+      font-size: 16px;
+      color: var(--navy);
+      letter-spacing:.01em;
+      line-height: 1.4;
+    }
+    .caseText{
+      margin: 0 0 10px 0;
+      color: rgba(11,18,32,.84);
+      line-height: 1.85;
+      font-weight: 600;
+      font-size: 13px;
+    }
+    .result{
+      border-radius: 14px;
+      border: 1px dashed rgba(217,119,6,.35);
+      background: rgba(217,119,6,.08);
+      padding: 10px 12px;
+      color: rgba(11,42,82,.92);
+      font-weight: 900;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+    .result b{ color: var(--orange); font-weight: 900; }
+
+    /* Forms */
+    form{ margin: 0; }
+    .formGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    .field{ display:flex; flex-direction:column; gap:6px; }
+    label{
+      font-size: 12px;
+      font-weight: 900;
+      color: rgba(11,42,82,.90);
+      letter-spacing:.04em;
+    }
+    input, textarea, select{
+      font: inherit;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      padding: 12px 12px;
+      background: #fff;
+      color: var(--text);
+      box-shadow: 0 6px 14px rgba(11,42,82,.04);
+      outline: none;
+    }
+    textarea{ min-height: 96px; resize: vertical; }
+    .help{
+      margin: 10px 0 0 0;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.7;
+      color: var(--muted);
+    }
+    .formActions{
+      display:flex; flex-wrap:wrap; gap:10px;
+      margin-top: 12px;
+    }
+
+    /* Entry */
+    .entryBox{
+      display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap: 14px;
+    }
+    .entryCopy h3{
+      margin:0 0 6px 0;
+      font-size: 18px;
+      color: var(--navy);
+      letter-spacing:.01em;
+    }
+    .entryCopy p{
+      margin:0;
+      color: rgba(11,18,32,.84);
+      font-weight: 700;
+      line-height: 1.75;
+      font-size: 13px;
+    }
+    .entryCopy .hot{
+      display:inline-block;
+      margin-top: 10px;
+      padding: 8px 10px;
+      border-radius: 14px;
+      border: 1px solid rgba(220,38,38,.22);
+      background: rgba(220,38,38,.08);
+      color: rgba(220,38,38,.92);
+      font-weight: 900;
+      letter-spacing:.04em;
+      font-size: 12px;
+    }
+
+    /* Bottom bar */
+    .bottomBar{
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 60;
+      background: rgba(11,42,82,.96);
+      border-top: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(10px);
+    }
+    .bottomBar__inner{
+      width: min(var(--container), calc(100% - 18px));
+      margin: 0 auto;
+      padding: 10px 0;
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    .btn--bar{
+      border-radius: 14px;
+      padding: 12px 12px;
+      font-size: 14px;
+      font-weight: 900;
+      letter-spacing:.02em;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: #fff;
+    }
+    .btn--bar:hover{ background: rgba(255,255,255,.12); transform: translateY(-1px); }
+    .btn--barEntry{
+      background: linear-gradient(180deg, #ef4444, #dc2626);
+      border-color: rgba(255,255,255,.16);
+      box-shadow: 0 10px 22px rgba(220,38,38,.22);
+    }
+
+    /* Footer */
+    footer{
+      padding: 18px 0 32px 0;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      text-align:center;
+    }
+    .footLinks{
+      display:flex;
+      justify-content:center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .footLinks a{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.6);
+      color: rgba(11,42,82,.84);
+      font-weight: 800;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      nav[aria-label]{ display:none; }
+      .brand{ min-width: auto; }
+      .header__right{ min-width: auto; }
+      .heroGrid{ grid-template-columns: 1fr; }
+      .grid-3{ grid-template-columns: 1fr; }
+      .grid-2{ grid-template-columns: 1fr; }
+      .formGrid{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 32px; }
+      body{ padding-bottom: 96px; }
+      .bottomBar__inner{ grid-template-columns: 1fr; }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AIテレアポパートナーズ",
+    "description": "即戦力テレアポ/インサイドセールス人材のアサインと運用支援",
+    "url": "."
+  }
+  </script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__row">
+        <a class="brand" href="#top" aria-label="AIテレアポパートナーズ トップへ">
+          <span class="logo" aria-hidden="true"></span>
+          <span class="brand__name">
+            AIテレアポパートナーズ
+            <span class="brand__sub">BtoB 新規接点を“安定して”増やす</span>
+          </span>
+        </a>
+
+        <nav aria-label="ページ内ナビゲーション">
+          <a class="navlink" href="#strengths">強み</a>
+          <a class="navlink" href="#cases">導入事例</a>
+          <a class="navlink" href="#contact">資料DL/問い合わせ</a>
+          <a class="navlink" href="#entry">応募</a>
+        </nav>
+
+        <div class="header__right">
+          <a class="miniCta" href="#contact">資料DL</a>
+          <a class="btn btn--danger" href="#entry">ENTRY</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="heroCard">
+          <div class="heroGrid">
+            <div>
+              <div class="kicker"><span class="dot" aria-hidden="true"></span>最短即日で稼働開始</div>
+              <h1>
+                即戦力テレアポ/IS人材を<br />
+                <span class="accent">即日アサイン</span>して、<br />
+                新規接点を安定供給。
+              </h1>
+              <p class="heroLead">
+                採用・育成が難しい架電業務を、経験者の実行力と、改善前提の運用で支えます。<br />
+                まずは「今月の新規接点」を増やし、営業は商談に集中できる体制へ。
+              </p>
+
+              <div class="ctaRow">
+                <a class="btn btn--primary" href="#contact">サービス資料DL</a>
+                <a class="btn btn--secondary" href="#contact">まずは相談する</a>
+                <a class="btn btn--ghost" href="#entry">人材応募（ENTRY）</a>
+              </div>
+
+              <div class="metrics" aria-label="実績と運用方針">
+                <span class="pill">支援企業：<b>100社+</b></span>
+                <span class="pill">稼働開始：<b>最短即日</b></span>
+                <span class="pill">運用：<b>KPI/記録</b>で可視化</span>
+              </div>
+
+              <p class="heroSubnote">
+                ※ 本ページの数値・事例はダミーを含みます（構成確認用）。実運用時は実データに差し替え可能です。<br />
+                ※ NDA・情報管理などの運用要件も、初回相談で合わせて確認します。
+              </p>
+            </div>
+
+            <aside class="visual" aria-label="ヒーロービジュアル（プレースホルダー）">
+              <div>
+                <div class="stamp"><i aria-hidden="true"></i>信頼感 × 実行力（BtoB向け）</div>
+                <p>
+                  “人手不足”の現場に、まずは確実に回る架電体制を。<br />
+                  記録 → 改善 → 更新を前提に、成果が続く運用へ寄せます。
+                </p>
+              </div>
+
+              <div class="mini" aria-hidden="true">
+                <div class="chip">
+                  <b>運用</b><br />
+                  KPI/品質を <span class="hot">可視化</span>
+                </div>
+                <div class="chip">
+                  <b>改善</b><br />
+                  記録から <span class="hot">高速PDCA</span>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Strengths -->
+    <section id="strengths">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2 class="sectionTitle">サービスの強み（3点）</h2>
+            <p class="sectionNote">BtoBで重要な「再現性・体制・改善」を前提に設計</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card__inner">
+              <h3 class="iconTitle"><span class="ico" aria-hidden="true">1</span>即戦力を、必要な稼働量で</h3>
+              <p class="desc">経験者アサインで立ち上がりを短縮。週◯h〜など、案件に合わせて調整可能な想定です。</p>
+              <span class="tag">狙い：<b>立ち上がりの速さ</b></span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__inner">
+              <h3 class="iconTitle"><span class="ico" aria-hidden="true">2</span>運用を“型化”して安定させる</h3>
+              <p class="desc">KPI、架電ログ、反応理由を揃え、担当交代が起きても品質が落ちにくい運用に寄せます。</p>
+              <span class="tag">狙い：<b>再現性と品質</b></span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__inner">
+              <h3 class="iconTitle"><span class="ico" aria-hidden="true">AI</span>記録×改善で、伸びる余地を残す</h3>
+              <p class="desc">スクリプト/切り返し/リスト仮説を改善前提に。面倒な記録は効率化し、改善に時間を使います。</p>
+              <span class="tag">狙い：<b>継続的な改善</b></span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cases -->
+    <section id="cases">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2 class="sectionTitle">導入事例（数値入りダミー）</h2>
+            <p class="sectionNote">“接触母数”を増やし、商談に集中できる状態へ</p>
+          </div>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <div class="card__inner">
+              <div class="caseNo"><i aria-hidden="true"></i>CASE01</div>
+              <h3 class="caseTitle">広告代理店（新規商談の安定化）</h3>
+              <p class="caseText">
+                月間1,000社へ架電し、商談10件を安定創出。<br />
+                接触母数不足を解消し、営業が商談対応に集中できる体制へ。
+              </p>
+              <div class="result">成果：<b>架電1,000社/月 → 商談10件/月</b>（ダミー）</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__inner">
+              <div class="caseNo"><i aria-hidden="true"></i>CASE02</div>
+              <h3 class="caseTitle">SaaS（リスト/スクリプト改善でCVR向上）</h3>
+              <p class="caseText">
+                反応理由の記録を揃え、切り返しを週次で更新。<br />
+                “刺さる”トークが増え、商談化率が改善。
+              </p>
+              <div class="result">成果：<b>商談化率 0.7% → 1.3%</b>（ダミー）</div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__inner">
+              <div class="caseNo"><i aria-hidden="true"></i>CASE03</div>
+              <h3 class="caseTitle">営業代行（複数案件の同時並行）</h3>
+              <p class="caseText">
+                架電業務を切り出し、複数案件を同時並行で推進。<br />
+                現場ボトルネックを解消し、コアメンバーが設計に集中。
+              </p>
+              <div class="result">成果：<b>対応領域の拡張（2案件 → 5案件）</b>（ダミー）</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2 class="sectionTitle">資料DL / 問い合わせ</h2>
+            <p class="sectionNote">フォーム送信はダミー（実運用ではHubSpot等に接続想定）</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card__inner">
+              <h3 class="caseTitle">資料DL（サービス概要/料金目安/導入フロー）</h3>
+              <p class="caseText">
+                まずは全体像を把握したい方向け。BtoB向けに必要情報を“過不足なく”まとめています。
+              </p>
+              <form class="js-form" data-form="資料DL">
+                <div class="formGrid" aria-label="資料DLフォーム">
+                  <div class="field">
+                    <label for="dl-company">会社名</label>
+                    <input id="dl-company" name="company" autocomplete="organization" required placeholder="例）株式会社サンプル" />
+                  </div>
+                  <div class="field">
+                    <label for="dl-name">お名前</label>
+                    <input id="dl-name" name="name" autocomplete="name" required placeholder="例）山田 太郎" />
+                  </div>
+                  <div class="field">
+                    <label for="dl-email">メール</label>
+                    <input id="dl-email" name="email" type="email" autocomplete="email" required placeholder="example@company.co.jp" />
+                  </div>
+                  <div class="field">
+                    <label for="dl-role">ご担当</label>
+                    <select id="dl-role" name="role" required>
+                      <option value="" selected disabled>選択してください</option>
+                      <option>経営/事業責任者</option>
+                      <option>営業責任者</option>
+                      <option>マーケ責任者</option>
+                      <option>現場担当</option>
+                      <option>その他</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="formActions">
+                  <button class="btn btn--primary" type="submit">資料をダウンロード（ダミー）</button>
+                  <a class="btn btn--ghost" href="#cases">事例を見る</a>
+                </div>
+                <p class="help">※ 送信後、自動返信メールで資料URLをご案内する想定です（本LPでは未接続）。</p>
+              </form>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card__inner">
+              <h3 class="caseTitle">問い合わせ（まずは30分の壁打ち）</h3>
+              <p class="caseText">
+                「今月の新規接点を増やしたい」「社内の営業が回らない」など、現状をお聞かせください。<br />
+                無理な営業はせず、最短の打ち手をご提案します。
+              </p>
+              <form class="js-form" data-form="問い合わせ">
+                <div class="formGrid" aria-label="問い合わせフォーム">
+                  <div class="field">
+                    <label for="in-company">会社名</label>
+                    <input id="in-company" name="company" autocomplete="organization" required placeholder="例）株式会社サンプル" />
+                  </div>
+                  <div class="field">
+                    <label for="in-name">お名前</label>
+                    <input id="in-name" name="name" autocomplete="name" required placeholder="例）山田 太郎" />
+                  </div>
+                  <div class="field">
+                    <label for="in-email">メール</label>
+                    <input id="in-email" name="email" type="email" autocomplete="email" required placeholder="example@company.co.jp" />
+                  </div>
+                  <div class="field">
+                    <label for="in-topic">相談内容（概要）</label>
+                    <input id="in-topic" name="topic" required placeholder="例）新規商談が安定しない / リスト設計を見直したい" />
+                  </div>
+                  <div class="field" style="grid-column: 1 / -1;">
+                    <label for="in-message">補足（任意）</label>
+                    <textarea id="in-message" name="message" placeholder="例）月間目標、対象業界、想定単価、現状の課題など"></textarea>
+                  </div>
+                </div>
+                <div class="formActions">
+                  <button class="btn btn--secondary" type="submit">送信して相談する（ダミー）</button>
+                  <a class="btn btn--ghost" href="#strengths">強みを見る</a>
+                </div>
+                <p class="help">※ 送信後、担当より1営業日以内のご連絡を想定（本LPでは未接続）。</p>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry -->
+    <section id="entry">
+      <div class="container">
+        <div class="sectionHead">
+          <div>
+            <h2 class="sectionTitle">応募（ENTRY）</h2>
+            <p class="sectionNote">“声”で価値を届ける仲間を募集しています</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card__inner">
+            <div class="entryBox">
+              <div class="entryCopy">
+                <h3>募集中：テレアポ/IS人材</h3>
+                <p>例：時給3,000円〜／リモート中心／成果に向き合える方歓迎</p>
+                <span class="hot">応募導線はダミー（実運用では採用フォームへ接続）</span>
+              </div>
+              <button class="btn btn--danger js-alert" type="button" data-alert="ENTRY（応募）フォームへ遷移します（ダミー）">ENTRY（応募する）</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div>© AIテレアポパートナーズ</div>
+        <div class="footLinks" aria-label="フッターリンク">
+          <a href="#contact">資料DL/問い合わせ</a>
+          <a href="#cases">導入事例</a>
+          <a href="#entry">応募</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="bottomBar" role="region" aria-label="画面下固定CTAバー">
+    <div class="bottomBar__inner">
+      <a class="btn btn--bar" href="#contact">資料DL</a>
+      <a class="btn btn--bar" href="#contact">問い合わせ</a>
+      <button class="btn btn--bar btn--barEntry js-alert" type="button" data-alert="ENTRY（応募）フォームへ遷移します（ダミー）">ENTRY</button>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const forms = document.querySelectorAll(".js-form");
+      forms.forEach((form) => {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const kind = form.getAttribute("data-form") || "フォーム";
+          const fd = new FormData(form);
+          const company = (fd.get("company") || "").toString().trim();
+          const name = (fd.get("name") || "").toString().trim();
+          const email = (fd.get("email") || "").toString().trim();
+          alert(
+            kind + " を受け付けました（ダミー）\n\n" +
+            "会社名: " + company + "\n" +
+            "お名前: " + name + "\n" +
+            "メール: " + email + "\n\n" +
+            "※ 実運用では送信API/MAツールに接続します。"
+          );
+          form.reset();
+        });
+      });
+
+      document.querySelectorAll(".js-alert").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const msg = btn.getAttribute("data-alert") || "遷移します（ダミー）";
+          alert(msg);
+        });
+      });
+    })();
+  </script>
+</body>
 </html>
