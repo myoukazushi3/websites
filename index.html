@@ -1,11 +1,577 @@
 <!doctype html>
-<html>
+<html lang="ja">
   <head>
-    <meta charset="utf-8">
-    <title>LP test</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SALES CROSS（構造再現）</title>
+    <meta name="description" content="企業への貢献度=報酬となるマッチングサービス（構造再現）" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
-    <h1>AIテレアポパートナーズ</h1>
-    <p>LP表示テスト</p>
+
+  <body class="front-page" data-page-id="front-page">
+    <!-- Loading -->
+    <div class="loading" data-loading>
+      <div class="loading-content">
+        <div class="loading-txt">
+          <div class="loading-logo">
+            <div class="loading-logo-bg" aria-hidden="true"></div>
+            <p><span data-loading-progress>0</span>%</p>
+            <div class="loading-logo-mark" aria-hidden="true"></div>
+            <div class="loading-logo-progress" aria-hidden="true"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" data-header>
+      <div class="header__wrap">
+        <div class="header-logo">
+          <h1>
+            <a href="./">
+              <span class="brand white-logo" aria-label="SALES CROSS">SALES CROSS</span>
+              <span class="brand black-logo show" aria-hidden="true">SALES CROSS</span>
+            </a>
+          </h1>
+        </div>
+
+        <div class="header-main">
+          <nav class="header-main-link" aria-label="Primary">
+            <ul>
+              <li class="active-page"><a href="./">TOP</a></li>
+              <li><a href="./pages/service.html">SERVICE</a></li>
+              <li><a href="./pages/partner.html">PARTNER</a></li>
+              <li><a href="./pages/job.html">JOB</a></li>
+              <li><a href="./pages/case-study.html">CASE STUDY</a></li>
+              <li><a href="./pages/news.html">NEWS</a></li>
+              <li><a href="./pages/about.html">ABOUT</a></li>
+              <li><a href="./pages/contact.html">CONTACT</a></li>
+            </ul>
+          </nav>
+
+          <div class="header-main-btn">
+            <a href="./pages/entry.html"><span>ENTRY</span></a>
+          </div>
+        </div>
+
+        <div class="header-sp-menu">
+          <button class="sp-menu-btn" type="button" aria-expanded="false" aria-controls="spMenu">
+            <span></span>
+            <span></span>
+            <span class="sr-only">メニュー</span>
+          </button>
+
+          <div class="header-sp-menu-main__wrap" id="spMenu" hidden>
+            <div class="header-sp-menu-main">
+              <div class="header-sp-menu-container">
+                <ul>
+                  <li><a href="./">TOP</a></li>
+                  <li><a href="./pages/service.html">SERVICE</a></li>
+                  <li><a href="./pages/partner.html">PARTNER</a></li>
+                  <li><a href="./pages/job.html">JOB</a></li>
+                  <li><a href="./pages/case-study.html">CASE STUDY</a></li>
+                  <li><a href="./pages/news.html">NEWS</a></li>
+                  <li><a href="./pages/about.html">ABOUT</a></li>
+                </ul>
+
+                <div class="header-sp-menu-main-footer">
+                  <ul>
+                    <li><a href="./pages/contact.html">CONTACT</a></li>
+                    <li><a href="./pages/entry.html">ENTRY</a></li>
+                  </ul>
+
+                  <a href="./pages/privacy-policy.html">Privacy Policy</a>
+                  <p>Copyright © 2024 株式会社ジェネラルプランニング All Rights Reserved.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="full-bg" data-overlay hidden></div>
+
+    <!-- Main -->
+    <main class="main">
+      <!-- FV -->
+      <section class="section sec-fv">
+        <div class="sec-fv-bg">
+          <video class="fvbg-video" loop muted autoplay playsinline preload="auto">
+            <!-- ローカルに動画を置く場合: ./assets/video/video_bg.mp4 -->
+            <source src="https://sales-cross.com/wp-content/themes/sales-cross/assets/video/video_bg2_4k24.mp4" type="video/mp4" />
+          </video>
+          <div class="fvbg-fallback" aria-hidden="true"></div>
+        </div>
+
+        <div class="xl-container">
+          <div class="l-container">
+            <div class="sec-fv-ttl">
+              <h2 class="fv-anime-js _delay js-io _fadeup">
+                GROWTH W TH<br />SALES CROSS
+                <span class="accent" aria-hidden="true"></span>
+              </h2>
+              <span class="fv-anime-js _delay js-io _fadeup">
+                企業への貢献度=報酬となる<br class="forsp" />マッチングサービスへ
+              </span>
+            </div>
+
+            <div class="sec-fv-txt">
+              <ul>
+                <li class="fv-anime-js _delay js-io _fadeup">SALES EXPERT</li>
+                <li class="fv-anime-js _delay js-io _fadeup">TALENT MATCHING</li>
+                <li class="fv-anime-js _delay js-io _fadeup">SERVICE</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="sec-fv-img">
+            <div class="sec-fv-service">
+              <p class="fv-anime-js _delay js-io _fadeup">ABOUT SERVICE</p>
+              <span class="fv-anime-js _delay js-io _fadeup">サービスの詳細についてはこちらから</span>
+              <a href="./pages/service.html" class="fv-anime-js _delay js-io _fadeup" aria-label="サービス詳細へ">
+                <span class="circle-arrow" aria-hidden="true">→</span>
+              </a>
+            </div>
+
+            <div class="sec-fv-img-arrow fv-anime-js js-io _fadein" aria-hidden="true">
+              <span class="scroll-indicator">Scroll</span>
+            </div>
+
+            <div class="sec-fv-img-bg forpc fv-anime-js js-io _fadein" aria-hidden="true">
+              <div class="img-placeholder">FV image (PC)</div>
+            </div>
+            <div class="sec-fv-img-bg forsp fv-anime-js js-io _fadein" aria-hidden="true">
+              <div class="img-placeholder">FV image (SP)</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service -->
+      <section class="section sec-service" id="service">
+        <div class="container">
+          <div class="sec-service-txt__wrap">
+            <div class="sec-service-ttl">
+              <h2 class="js-io _fadeup">
+                即戦力セールス　成長企業<br />業務委託マッチングサービス
+                <span class="accent-lg" aria-hidden="true"></span>
+              </h2>
+            </div>
+
+            <div class="sec-service-txt">
+              <p class="js-io _fadeup">
+                会社、事業の熱狂はセールスから始める。<br />
+                セールスクロスとは、厳選されたセールスエキスパートをご紹介するマッチングサービスです。<br />
+                セールスは成果を追求。透明性のある報酬を提供することで企業・事業が成長し、セールスが共鳴する。
+              </p>
+            </div>
+          </div>
+
+          <div class="sec-service-img js-io _fadeup" aria-hidden="true">
+            <div class="img-placeholder tall">Service image</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Job -->
+      <section class="section sec-job">
+        <div class="container">
+          <div class="sec-job-ttl">
+            <div class="sec-ttl">
+              <h2 class="js-io _fadeup _delay">JOB</h2>
+              <span class="js-io _fadeup _delay">注目求人</span>
+            </div>
+
+            <div class="a-btn js-io _fadeup">
+              <a href="./pages/job.html"><span>求人情報一覧を見る</span></a>
+            </div>
+          </div>
+
+          <div class="sec-job-content">
+            <ul class="job-items">
+              <li class="job-item js-io _fadeup _delay">
+                <a href="./pages/job.html">
+                  <div class="job-item-txt">
+                    <div class="job-item-txt-ttl">
+                      <p>冊子広告_インサイドセールス</p>
+                      <span></span>
+                    </div>
+                    <div class="job-item-txt-detail">
+                      <div class="job-item-txt-detail-price">
+                        <span class="ico" aria-hidden="true">¥</span>
+                        <p>320,000円〜800,000円</p>
+                      </div>
+                      <div class="job-item-txt-detail-location">
+                        <span class="ico" aria-hidden="true">⌖</span>
+                        <p>東京 / 福岡 / 大阪</p>
+                      </div>
+                    </div>
+                    <div class="job-item-txt-ctg">
+                      <p>#インサイドセールス</p>
+                    </div>
+                  </div>
+                  <div class="job-item-img" aria-hidden="true">
+                    <div class="avatar">SC</div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="job-item js-io _fadeup _delay">
+                <a href="./pages/job.html">
+                  <div class="job-item-txt">
+                    <div class="job-item-txt-ttl">
+                      <p>営業顧問_半導体(工場開拓)</p>
+                      <span></span>
+                    </div>
+                    <div class="job-item-txt-detail">
+                      <div class="job-item-txt-detail-price">
+                        <span class="ico" aria-hidden="true">¥</span>
+                        <p>300,000円〜400,000円</p>
+                      </div>
+                      <div class="job-item-txt-detail-location">
+                        <span class="ico" aria-hidden="true">⌖</span>
+                        <p>東京都</p>
+                      </div>
+                    </div>
+                    <div class="job-item-txt-ctg">
+                      <p>#営業顧問</p>
+                    </div>
+                  </div>
+                  <div class="job-item-img" aria-hidden="true">
+                    <div class="avatar">SC</div>
+                  </div>
+                </a>
+              </li>
+
+              <li class="job-item js-io _fadeup _delay">
+                <a href="./pages/job.html">
+                  <div class="job-item-txt">
+                    <div class="job-item-txt-ttl">
+                      <p>SaaS事業の営業戦略設計</p>
+                      <span></span>
+                    </div>
+                    <div class="job-item-txt-detail">
+                      <div class="job-item-txt-detail-price">
+                        <span class="ico" aria-hidden="true">¥</span>
+                        <p>300,000円〜400,000円</p>
+                      </div>
+                      <div class="job-item-txt-detail-location">
+                        <span class="ico" aria-hidden="true">⌖</span>
+                        <p>東京都</p>
+                      </div>
+                    </div>
+                    <div class="job-item-txt-ctg">
+                      <p>#営業戦略設計</p>
+                    </div>
+                  </div>
+                  <div class="job-item-img" aria-hidden="true">
+                    <div class="avatar">SC</div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <div class="a-btn">
+              <a href="./pages/job.html"><span>求人情報一覧を見る</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact CTA -->
+      <div class="contact-sec__wrap js-io _fadeup">
+        <div class="contact-sec">
+          <div class="contact-sec-ttl">
+            <p>CONTACT</p>
+            <span>求人掲載希望の企業様はコンタクトフォームからお問い合わせください。</span>
+          </div>
+          <div class="a-btn">
+            <a href="./pages/contact.html"><span>お問い合わせはこちら</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Partner -->
+      <section class="section sec-partner">
+        <div class="container">
+          <div class="sec-partner-ttl">
+            <div class="sec-ttl">
+              <h2 class="js-io _fadeup _delay">PARTNER</h2>
+              <span class="js-io _fadeup _delay">セールスエキスパート紹介</span>
+            </div>
+
+            <div class="a-btn forpc js-io _fadeup">
+              <a href="./pages/partner.html"><span>パートナー一覧を見る</span></a>
+            </div>
+          </div>
+
+          <div class="sec-partner-content">
+            <div class="sec-partner-items__wrap">
+              <div class="partner-items swiper-container partner-swiper">
+                <div class="swiper-button-list js-io _fadein">
+                  <div class="swiper-button-prev m-btn" aria-label="前へ"></div>
+                  <div class="swiper-button-next m-btn" aria-label="次へ"></div>
+                </div>
+
+                <div class="swiper-wrapper js-io _fadein">
+                  <div class="swiper-slide partner-card" data-partner-open data-partner-name="Name A" data-partner-about="サンプルのパートナー紹介文です。">
+                    <div class="partner-card__img" aria-hidden="true">A</div>
+                    <p class="partner-card__name">Name A</p>
+                    <p class="partner-card__tags">#営業顧問 #新規開拓</p>
+                  </div>
+                  <div class="swiper-slide partner-card" data-partner-open data-partner-name="Name B" data-partner-about="サンプルのパートナー紹介文です。">
+                    <div class="partner-card__img" aria-hidden="true">B</div>
+                    <p class="partner-card__name">Name B</p>
+                    <p class="partner-card__tags">#インサイドセールス</p>
+                  </div>
+                  <div class="swiper-slide partner-card" data-partner-open data-partner-name="Name C" data-partner-about="サンプルのパートナー紹介文です。">
+                    <div class="partner-card__img" aria-hidden="true">C</div>
+                    <p class="partner-card__name">Name C</p>
+                    <p class="partner-card__tags">#営業戦略</p>
+                  </div>
+                </div>
+
+                <div class="swiper-pagination js-io _fadein"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Entry CTA -->
+      <div class="entry-sec__wrap js-io _fadeup">
+        <div class="entry-sec">
+          <div class="entry-sec-ttl">
+            <p>ENTRY</p>
+            <span>案件紹介ご希望の方はエントリーフォームよりご連絡ください。</span>
+          </div>
+          <div class="a-btn _white">
+            <a href="./pages/entry.html"><span>応募はこちらから</span></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Case Study -->
+      <section class="section sec-study">
+        <div class="container">
+          <div class="sec-study-ttl">
+            <div class="sec-ttl">
+              <h2 class="js-io _fadeup _delay">CASE STUDY</h2>
+              <span class="js-io _fadeup _delay">事例紹介</span>
+            </div>
+            <div class="a-btn js-io _fadeup">
+              <a href="./pages/case-study.html"><span>事例一覧を見る</span></a>
+            </div>
+          </div>
+
+          <div class="sec-study-content">
+            <div class="case-study-items">
+              <a href="./pages/case-study.html" class="case-study-item js-io _fadeup _delay">
+                <div class="case-study-item-img" aria-hidden="true"><div class="img-placeholder small">Case</div></div>
+                <div class="case-study-item-txt">
+                  <div class="case-study-item-txt-date"><span>2024.11.22</span></div>
+                  <div class="case-study-item-txt-ttl"><p>デザイン制作・デザイナースクールの営業ポジション</p></div>
+                  <div class="case-study-item-txt-company"><span>ヒトトヒトDESIGN株式会社</span></div>
+                </div>
+              </a>
+              <a href="./pages/case-study.html" class="case-study-item js-io _fadeup _delay">
+                <div class="case-study-item-img" aria-hidden="true"><div class="img-placeholder small">Case</div></div>
+                <div class="case-study-item-txt">
+                  <div class="case-study-item-txt-date"><span>2024.11.22</span></div>
+                  <div class="case-study-item-txt-ttl"><p>営業代行会社×営業フリーランス</p></div>
+                  <div class="case-study-item-txt-company"><span>株式会社Realrise</span></div>
+                </div>
+              </a>
+              <a href="./pages/case-study.html" class="case-study-item js-io _fadeup _delay">
+                <div class="case-study-item-img" aria-hidden="true"><div class="img-placeholder small">Case</div></div>
+                <div class="case-study-item-txt">
+                  <div class="case-study-item-txt-date"><span>2024.11.18</span></div>
+                  <div class="case-study-item-txt-ttl"><p>BPOサービス×案件の紹介</p></div>
+                  <div class="case-study-item-txt-company"><span>株式会社AddBox</span></div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- News -->
+      <section class="section sec-news">
+        <div class="container">
+          <div class="sec-news-ttl">
+            <div class="sec-ttl">
+              <h2 class="js-io _fadeup _delay">NEWS</h2>
+              <span class="js-io _fadeup _delay">お知らせ</span>
+            </div>
+            <div class="a-btn js-io _fadeup">
+              <a href="./pages/news.html"><span>お知らせ一覧を見る</span></a>
+            </div>
+          </div>
+
+          <div class="sec-news-content">
+            <ul class="news-items">
+              <li class="news-item js-io _fadeup _delay">
+                <a href="./pages/news.html">
+                  <span class="news-item-date">2025.05.13</span>
+                  <span class="news-item-ttl">スポンサー契約を締結！</span>
+                </a>
+              </li>
+              <li class="news-item js-io _fadeup _delay">
+                <a href="./pages/news.html">
+                  <span class="news-item-date">2024.12.01</span>
+                  <span class="news-item-ttl">新取締役就任のお知らせ</span>
+                </a>
+              </li>
+              <li class="news-item js-io _fadeup _delay">
+                <a href="./pages/news.html">
+                  <span class="news-item-date">2024.11.29</span>
+                  <span class="news-item-ttl">リリース</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-head">
+          <div class="footer-head__elem footer-head-contact">
+            <a href="./pages/contact.html">
+              <p>CONTACT</p>
+              <span>求人掲載希望の企業様はコンタクト<br />フォームからお問い合わせください。</span>
+            </a>
+          </div>
+
+          <div class="footer-head__elem footer-head-entry">
+            <a href="./pages/entry.html">
+              <p>ENTRY</p>
+              <span>パートナー契約ご希望の方はエントリー<br />フォームよりご連絡ください。</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-main">
+          <div class="footer-main-left">
+            <div class="footer-main-left-logo">
+              <span class="brand brand--footer" aria-label="SALES CROSS">SALES CROSS</span>
+            </div>
+          </div>
+
+          <div class="footer-main-right">
+            <div class="footer-main-right-menu">
+              <p>MENU</p>
+              <ul>
+                <li><a href="./">TOP</a></li>
+                <li><a href="./pages/service.html">SERVICE</a></li>
+                <li><a href="./pages/partner.html">PARTNER</a></li>
+                <li><a href="./pages/job.html">JOB</a></li>
+                <li><a href="./pages/case-study.html">CASE STUDY</a></li>
+                <li><a href="./pages/news.html">NEWS</a></li>
+                <li><a href="./pages/about.html">COMPANY</a></li>
+                <li><a href="./pages/contact.html">CONTACT</a></li>
+                <li><a href="./pages/entry.html">ENTRY</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-main-right-company">
+              <p>
+                株式会社ジェネラルプランニング<br />
+                〒105-0012<br />
+                東京都港区芝大門2丁目4-5　<br class="forsp" />芝ダイヤハイツ408
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-sp-menu">
+          <ul>
+            <li><a href="./">TOP</a></li>
+            <li><a href="./pages/service.html">SERVICE</a></li>
+            <li><a href="./pages/partner.html">PARTNER</a></li>
+            <li><a href="./pages/job.html">JOB</a></li>
+            <li><a href="./pages/case-study.html">CASE STUDY</a></li>
+            <li><a href="./pages/news.html">NEWS</a></li>
+            <li><a href="./pages/about.html">COMPANY</a></li>
+            <li><a href="./pages/contact.html">CONTACT</a></li>
+            <li><a href="./pages/entry.html">ENTRY</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="footer-bottom-privacy">
+            <a href="./pages/privacy-policy.html">Privacy Policy</a>
+          </div>
+          <div class="footer-bottom-copyright">
+            <p>Copyright © 2024 株式会社ジェネラルプランニング All Rights Reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Partner modal -->
+    <div class="partner-modal__wrap" data-partner-modal hidden aria-hidden="true">
+      <div class="partner-modal-main" role="dialog" aria-modal="true" aria-label="Partner details" tabindex="-1">
+        <div class="partner-modal">
+          <div class="partner-modal-close">
+            <button type="button" data-partner-close aria-label="閉じる">×</button>
+          </div>
+
+          <div class="partner-modal-img" aria-hidden="true">
+            <div class="img-placeholder">Partner image</div>
+          </div>
+
+          <div class="partner-modal-content">
+            <div class="partner-modal-head">
+              <div class="partner-modal-head-ico" aria-hidden="true">
+                <div class="avatar">SC</div>
+              </div>
+
+              <div class="partner-modal-head-ttl">
+                <p data-partner-modal-name>Name</p>
+              </div>
+
+              <div class="partner-modal-head-ctg">
+                <ul data-partner-modal-tags></ul>
+              </div>
+            </div>
+
+            <div class="partner-modal-about">
+              <p class="partner-modal-about-ttl">About</p>
+              <p class="partner-modal-about-txt" data-partner-modal-about></p>
+            </div>
+
+            <div class="partner-modal-contact">
+              <div class="a-btn">
+                <a href="./pages/contact.html">パートナーに仕事を依頼する</a>
+              </div>
+            </div>
+
+            <div class="partner-modal-close-sp">
+              <button type="button" data-partner-close class="linklike">閉じる</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/main.js"></script>
   </body>
 </html>
